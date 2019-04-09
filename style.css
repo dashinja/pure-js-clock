@@ -1,0 +1,67 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.clock {
+  display: flex;
+  font-size: 50px;
+  font-family: 'Orbitron', sans-serif;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: #263238;
+  width: 400px;
+  border-radius: 10px;
+  border: 10px solid #37474f;
+  box-sizing: border-box;
+  padding: 10px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 1;
+}
+.clock .digit {
+  width: 50px;
+  height: 75px;
+  margin: 5px;
+  box-styling: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.clock .digit .placeholder {
+  position: absolute;
+  color: #37474f;
+  z-index: -1;
+}
+.clock .hr {
+  font-size: 15px;
+  width: 35px;
+}
+.clock .button {
+  position: absolute;
+  width: 40px;
+  height: 15px;
+  z-index: 1;
+  background: #2196f3;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  border-radius: 5px 5px 0px 0px;
+  top: -25px;
+  left: 50px;
+}
+
+.clock .colon {
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
