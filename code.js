@@ -13,12 +13,13 @@ switchMode.addEventListener('click', () => {
     : currentDateTime.getHours() > 11
     ? 'PM'
     : 'AM'
+  updateTime()
 })
 
 // Functions
 function updateTime() {
   currentDateTime = new Date(Date.now())
-  const hours = formatTime(currentDateTime.getHours())
+  const hours = formatTime(getCorrectHours(currentDateTime.getHours()))
   const minutes = formatTime(currentDateTime.getMinutes())
   const seconds = formatTime(currentDateTime.getSeconds())
 
@@ -28,6 +29,25 @@ function updateTime() {
     digit.textContent = currentTimeString.charAt(i)
   })
 }
+
 function formatTime(num) {
   return num < 10 ? `0${num}` : `${num}`
+}
+
+function getCorrectHours(hours) {
+  if (is24Hour) {
+    return hours
+  } else {
+    return convert24ToAMPM(hours)
+  }
+}
+
+function convert24ToAMPM(hour) {
+  if (hour === 0) {
+    return 12
+  } else if (hour > 12) {
+    return (hour -= 12)
+  } else {
+    return hour
+  }
 }
